@@ -4,3 +4,8 @@
 <div class="">
   <%= link_to "Edit",  edit_song_path(@song) %>
 </div>
+
+
+<%= form_tag person_path(@person.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@person.name}" %>
+<% end %>
