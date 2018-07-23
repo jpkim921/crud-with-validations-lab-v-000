@@ -28,6 +28,7 @@ class SongsController < ApplicationController
   end
 
   def update
+    @song = Song.find(params[:id])
     if @song.update(params.require(:song).permit(:title, :release_year, :released, :genre, :artist_name))
       redirect_to song_path(@song)
     else
